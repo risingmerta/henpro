@@ -1,142 +1,30 @@
-/* src/app/globals.css */
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* rgb(83, 255, 134) */
-
-:root {
-  --grey-dark: #343a40;
-  --odd-grey: #3e454d;
-  --dark: #242428;
-  --height-small: 400px;
-  --height-medium: 500px;
-  --height-large: 610px;
-  --light: #ffffff;
-  --theme:  #fdbd73;
-  --random-colors: #ff5733, #33ff57, #5733ff, #ff33a8, #33a8ff, #a833ff, #ff33ff,
-    #33ffc2, #a8ff33, #ffc233;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #303030; /* Dark background to match the image */
-  color: #ffffff; /* White text for contrast */
-  font-family: "Nunito", sans-serif; /* Applying Nunito font */
-}
-
-.container {
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
-  text-align: center;
-  background-color: #141414; /* Matching the image background */
-}
-
-.heroImage {
+.foot {
+  background: #17181a;
   width: 100%;
-  height: 400px; /* Fixed height for responsiveness */
-  object-fit: cover; /* Ensure the image covers the area */
-  margin-bottom: 20px;
-  position: relative; /* Allow positioning */
-  right: 0; /* Align the image to the right */
-}
-
-.dataContainer {
+  z-index: 2;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  padding-left: 50px;
 }
-
-.dataItem {
-  background: #1f1f1f; /* Slightly lighter shade for data items */
-  padding: 20px;
-  margin: 10px 0;
-  width: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.margino {
+  margin-top: 100px;
 }
-
-.data-container {
-  position: relative;
-}
-
-.hero-image {
-  position: relative;
-  width: 100%;
-  height: auto;
+.flx {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
-
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
-  font-size: 64px;
-  text-align: center;
-  z-index: 1;
-  font-weight: 100;
-  /* background-color: rgba(0, 0, 0, 0.5); Optional: add a semi-transparent background for better readability */
-  font-family: "Montserrat", sans-serif !important;
-  line-height: 72px;
-  font-style: normal;
-  padding: 1em;
-  border-radius: 10px;
+.headi {
+  font-size: 25px;
+  font-weight: 500;
 }
-
-.texto {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #8a8787;
-  font-size: 21px;
-  width: 620px;
-  text-align: center;
-  z-index: 1;
-  font-weight: 100;
-  /* background-color: rgba(0, 0, 0, 0.5); Optional: add a semi-transparent background for better readability */
-  font-family: "Montserrat", sans-serif !important;
-
-  font-style: normal;
-  padding: 1em;
-  border-radius: 10px;
-}
-
-.unlimi {
+.col-p {
   color: #fdbd73;
 }
-
-.dataItem div {
-  margin: 5px 0;
-  color: #b0b0b0; /* Light grey text for data items */
+.copyright-text {
+  color: grey;
+  font-size: 14px;
 }
-
-.site-details {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 43.5vh; /* Adjust as needed */
-  background-color: #141414;
-  margin: 0 auto;
-  padding: 20px;
-
-  z-index: 1; /* Ensure the container is above background elements */
-}
-
-/* Pseudo-element for gradient overlay */
-
-
 .site-image {
   position: relative;
   z-index: 2; /* Higher z-index for the image */
@@ -622,5 +510,17 @@ body {
     background-image: url('https://static-assets.freeanimehentai.net/images/bg3d-1900.930.min.jpg');
     background-size: 300%; /* This ensures the image is twice as wide */
     background-position: right; /* This positions the light side within the container */
+  }
+}
+@media screen and (max-width: 950px) {
+  .foot {
+    background: #17181a;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 20px;
   }
 }
