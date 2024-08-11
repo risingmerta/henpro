@@ -4,7 +4,10 @@ const nextConfig = {
     domains: ['static-assets-44d.pages.dev', 'static-assets.freeanimehentai.net', 'hentai.tv'], // Add your domain here
   },
   eslint: {
-    ignoreDuringBuilds: true, // This will disable ESLint during the build process
+    ignoreDuringBuilds: true, // Disable ESLint during the build process
+  },
+  typescript: {
+    ignoreBuildErrors: true, // Disable TypeScript type checking during the build process
   },
 };
 

@@ -20,7 +20,7 @@ const Hero = ({ slides }) => {
         </div>
         <div className="flex righto">
           <div className="all">
-            <Link href={'/random'} className="traa">Randomize</Link>
+            <Link href={'/random/go'} className="traa">Randomize</Link>
           </div>
           <div className="trendi-swiper-navigation">
             <div className="btn-previ swipe-controls">

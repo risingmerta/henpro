@@ -19,7 +19,7 @@ export default async function page() {
     console.error("Error fetching document:", error);
   }
   const icons = [<BsFire />, <FaLeaf />, <FaRandom />, <IoMdSearch />];
-  const links = ['/','/browse','/random','/search']
+  const links = ['/','/browse/go','/random/go','/search/go']
   return (
     <>
       <div className="comp-brow">

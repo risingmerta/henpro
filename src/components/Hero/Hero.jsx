@@ -20,7 +20,7 @@ const Hero = ({ slides }) => {
         </div>
         <div className="flex righto">
           <div className="all">
-            <Link href={'/search'} className="traa">All</Link>
+            <Link href={'/search/go'} className="traa">All</Link>
           </div>
           <div className="trendi-swiper-navigation">
             <div className="btn-prev swipe-controls">

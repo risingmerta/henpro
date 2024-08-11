@@ -47,7 +47,7 @@ export default function NavSidebar(props) {
             <li>
               <Link
                 onClick={() => scrollToTop()}
-                href="/random"
+                href="/random/go"
                 className="homop"
               >
                 <div className="icono">
@@ -59,7 +59,7 @@ export default function NavSidebar(props) {
             <li>
               <Link
                 onClick={() => scrollToTop()}
-                href="/search"
+                href="/search/go"
                 className="homop"
               >
                 <div className="icono">
@@ -71,7 +71,7 @@ export default function NavSidebar(props) {
             <li>
               <Link
                 onClick={() => scrollToTop()}
-                href="/browse"
+                href="/browse/go"
                 className="homop"
               >
                 <div className="icono">

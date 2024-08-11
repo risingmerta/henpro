@@ -47,7 +47,7 @@ const Navbar = (props) => {
     window.location.href = `/search?name=${searchForm?.name}`;
   };
   const lognn = () => {
-    window.location.href = `/browse`;
+    window.location.href = `/browse/go`;
   };
 
   const handleKeyPress = (e) => {
@@ -98,7 +98,7 @@ const Navbar = (props) => {
             </div>
           </div>
           <div className="search-all">
-            <Link className="search-wrapper" href={"/search"}>
+            <Link className="search-wrapper" href={"/search/go"}>
               <input
                 style={
                   pageIsScrolled
@@ -180,7 +180,7 @@ const Navbar = (props) => {
         </nav>
         {floatSearchIsVisible && (
           <div>
-            <Link className="floating-search-wrapper" href={"/search"}>
+            <Link className="floating-search-wrapper" href={"/search/go"}>
               <input
                 type="text"
                 className="search-text f-poppins"
