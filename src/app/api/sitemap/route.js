@@ -1,7 +1,7 @@
 // app/api/sitemap/route.js
 import { NextResponse } from 'next/server';
 
-const EXTERNAL_DATA_URL = 'https://hanimetv.netlify.app';
+const EXTERNAL_DATA_URL = 'https://hanimetv.vercel.app';
 
 async function fetchAllIds() {
   let allIds = [];
