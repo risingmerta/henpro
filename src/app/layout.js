@@ -14,9 +14,10 @@ export const metadata = {
           collection. We are the definitive source for the best curated 720p /
           1080p HD hentai videos, viewable by mobile phone and tablet, for free.`,
   verification: {
-    google: "OGW3aXxhc0eEiBr1-yVqwhCIDKZOvD302bVDqOUXjHU",
+    google: "x0aiWAODNGU-1UA2FXyORfyme9uWJir7mIMu8AMmLm4",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
