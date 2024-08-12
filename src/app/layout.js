@@ -14,7 +14,6 @@ export const metadata = {
   description: `Enjoy your unlimited hentai & anime
           collection. We are the definitive source for the best curated 720p /
           1080p HD hentai videos, viewable by mobile phone and tablet, for free.`,
-  "google-site-verification": "OGW3aXxhc0eEiBr1-yVqwhCIDKZOvD302bVDqOUXjHU",
 };
 
 export default function RootLayout({ children }) {
