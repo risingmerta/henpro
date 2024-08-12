@@ -44,7 +44,7 @@ const Navbar = (props) => {
   };
   const viron = () => {
     setSearchForm({ name: "" });
-    window.location.href = `/search?name=${searchForm?.name}`;
+    window.location.href = `/search/go?name=${searchForm?.name}`;
   };
   const lognn = () => {
     window.location.href = `/browse/go`;
@@ -54,7 +54,7 @@ const Navbar = (props) => {
     if (e.key === "Enter") {
       setSearchForm({ name: "" });
       hihi !== ""
-        ? (window.location.href = `/search?name=${searchForm?.name}`)
+        ? (window.location.href = `/search/go?name=${searchForm?.name}`)
         : "";
 
       //window.location.replace('/watch');

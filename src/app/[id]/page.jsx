@@ -6,6 +6,37 @@ import Image from "next/image";
 import "./page.css";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  let data = [];
+  try {
+    // Fetch document from Firestore
+    const docRef = doc(db, "hentai", params.id);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const docData = docSnap.data();
+      data = docData;
+
+      // Fetch image URL from Storage
+      if (docData.poster) {
+        const storageRef = ref(storage, docData.poster);
+        const url = await getDownloadURL(storageRef);
+        imageURL = url;
+      }
+    } else {
+      console.log("No such document!");
+    }
+  } catch (error) {
+    console.error("Error fetching document:", error);
+  }
+  return {
+    title:
+    `Watch ${data.title} Hentai Video Streams Online in 720p , 1080p HD - hanime.tv`,
+  description: `Enjoy your unlimited hentai & anime
+          collection. We are the definitive source for the best curated 720p /
+          1080p HD hentai videos, viewable by mobile phone and tablet, for free.`,
+  };
+}
+
 export default async function page({ params }) {
   let imageURL = "";
   let data = [];
