@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import LoadingSpinner from "../loadingSpinner";
-import { FaAngleRight, FaBars, FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import Image from "next/image";
 import useAnime from "@/hooks/useAnime";
 import Link from "next/link";
@@ -91,7 +90,7 @@ const Navbar = (props) => {
               <Link href="/">
                 <div style={{ width: "auto", height: "40px" }}>
                   <div className="logo0">
-                    hanime<div className="col-cls">.</div>tv
+                    hen<div className="col-cls">pro</div>
                   </div>
                 </div>
               </Link>

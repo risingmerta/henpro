@@ -4,12 +4,11 @@ import { BsFire } from "react-icons/bs";
 import "./page.css";
 import { FaLeaf, FaRandom } from "react-icons/fa";
 import { IoMdSearch, IoMdVideocam } from "react-icons/io";
-import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Browse Free Hentai Video Streams Online in 720p , 1080p HD - hanime.tv",
+    "Browse Free Hentai Video Streams Online in 720p , 1080p HD - henpro",
   description: `Enjoy your unlimited hentai & anime
           collection. We are the definitive source for the best curated 720p /
           1080p HD hentai videos, viewable by mobile phone and tablet, for free.`,

@@ -1,11 +1,9 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect} from "react";
 import NavBar from "@/components/Navbar/Navbar";
 import NavSidebar from "@/components/NavSideBar/NavSideBar";
 import Advertize from "@/components/Advertize/Advertize";
 import Footer from "@/components/footer/Footer";
-import { easeOut, motion } from "framer-motion";
-import LoadingSpinner from "@/components/loadingSpinner";
 
 export default function Nav({ children }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,11 +25,7 @@ export default function Nav({ children }) {
     };
   }, [isScrolled]);
   return (
-    <motion.div
-      className="app-container f-poppins"
-      animate={{ y: [-window.innerHeight / 4, 10, 0] }}
-      transition={{ duration: 0.3, ease: easeOut }}
-    >
+    <div className="app-container f-poppins">
       <NavBar
         isScrolled={isScrolled}
         sidebarIsOpen={sidebarIsOpen}
@@ -45,6 +39,6 @@ export default function Nav({ children }) {
       {children}
 
       <Footer />
-    </motion.div>
+    </div>
   );
 }

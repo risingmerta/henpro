@@ -17,10 +17,10 @@ const Footer = () => {
           </div>
           <div className="site-lines">
             <div className="line-head">
-              Watch Hentai online at hanime<span className="col-imp">.</span>tv
+              Watch Hentai online at hen<span className="col-imp">pro</span>
             </div>
             <div className="line-inn">
-              In hanime<span className="col-imp">.</span>tv you will find a
+              In hen<span className="col-imp">pro</span> you will find a
               hentai haven for the latest uncensored Hentai. We offer the best
               hentai collection in the highest possible quality at 1080p from
               Blu-Ray rips. Many videos are licensed direct downloads from the
@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
             <div className="line-inn">
               If you're looking for the latest Hentai videos of various genres,
-              hanime<span className="col-imp">.</span>tv is exactly what you
+              hen<span className="col-imp">pro</span> is exactly what you
               need. Our website is an international hub of Hentai animation.
               Here you will find a great collection of uncensored Hentai videos
               as well as links to sex games and porn. Browse our catalog to find
@@ -40,7 +40,7 @@ const Footer = () => {
               mobile phone.
             </div>
             <div className="line-inn">
-              With hanime<span className="col-imp">.</span>tv, you can watch the
+              With hen<span className="col-imp">pro</span>, you can watch the
               newest Hentai series and follow your favorite characters. Whether
               you like a raw fap material or a well-developed plot, we have got
               you covered. Here, you can find Hentai that focuses on the
@@ -70,7 +70,7 @@ const Footer = () => {
               <span className="col-imp">Yuri Hentai</span>, and much more!
             </div>
             <div className="line-head">
-              Join our hentai hanime<span className="col-imp">.</span>tv fans
+              Join our hentai hen<span className="col-imp">pro</span> fans
               community Discord
             </div>
             <div className="line-inn">
@@ -99,7 +99,7 @@ const Footer = () => {
             />
           </div>
           <div className="headi">
-            hanime<span className="col-p">.</span>tv
+            hen<span className="col-p">pro</span>
             <div className="copyright-text">
               <p>
                 Hanime does not store any files on our server; we only link to

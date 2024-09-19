@@ -1,7 +1,6 @@
 import React from "react";
 import "./page.css";
 import { FaAngleRight } from "react-icons/fa";
-import Footer from "@/components/footer/Footer";
 import Link from "next/link";
 
 export default async function page({ params, searchParams }) {

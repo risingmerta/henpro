@@ -27,7 +27,7 @@ const Search = (props) => {
                     : "pgino"
                 }`}
                 key={i}
-                href={`/search?page=${i}`}
+                href={`/search/go?page=${i}`}
               >
                 {i}
               </Link>
@@ -35,7 +35,9 @@ const Search = (props) => {
           </div>
           <Link
             className="pagination-next"
-            href={`/search?page=${props.page ? parseInt(props.page) + 1 : 2}`}
+            href={`/search/go?page=${
+              props.page ? parseInt(props.page) + 1 : 2
+            }`}
           >
             <FaAngleRight />
           </Link>
@@ -68,7 +70,7 @@ const Search = (props) => {
                     : "pgino"
                 }`}
                 key={i}
-                href={`/search?page=${i}`}
+                href={`/search/go?page=${i}`}
               >
                 {i}
               </Link>
@@ -76,7 +78,9 @@ const Search = (props) => {
           </div>
           <Link
             className="pagination-next"
-            href={`/search?page=${props.page ? parseInt(props.page) + 1 : 2}`}
+            href={`/search/go?page=${
+              props.page ? parseInt(props.page) + 1 : 2
+            }`}
           >
             <FaAngleRight />
           </Link>

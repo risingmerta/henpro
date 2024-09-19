@@ -1,10 +1,8 @@
 import React from "react";
 import "./page.css";
-import { FaAngleRight } from "react-icons/fa";
-import Footer from "@/components/footer/Footer";
 import Search from "@/components/Search/Search";
 
-export default async function page({ params, searchParams }) {
+export default async function page({searchParams }) {
   let data = [];
   try {
     const res = await fetch(
