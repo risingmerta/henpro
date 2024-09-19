@@ -9,6 +9,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Disable TypeScript type checking during the build process
   },
+  staticPageGenerationTimeout: 300,
 };
 
 export default nextConfig;
