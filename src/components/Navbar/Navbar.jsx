@@ -5,10 +5,12 @@ import Image from "next/image";
 import useAnime from "@/hooks/useAnime";
 import Link from "next/link";
 import "./navbar.css";
+import { useRouter } from "next/navigation";
 
 const Navbar = (props) => {
+  const router = useRouter();
   const [searchForm, setSearchForm] = useState({ name: "" });
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(null);
   const [floatSearchIsVisible, setFloatSearchIsVisible] = useState(false);
   const setSidebarIsOpen = props.setSidebarIsOpen;
   const pageIsScrolled = props.isScrolled;
@@ -39,22 +41,20 @@ const Navbar = (props) => {
 
   const diljit = (id) => {
     setSearchForm({ name: "" });
-    window.location.href = `/${id}`;
+    router.push(`/${id}`);
   };
   const viron = () => {
     setSearchForm({ name: "" });
-    window.location.href = `/search/go?name=${searchForm?.name}`;
+    router.push(`/search/go?name=${searchForm?.name}`);
   };
   const lognn = () => {
-    window.location.href = `/browse/go`;
+    router.push(`/browse/go`);
   };
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       setSearchForm({ name: "" });
-      hihi !== ""
-        ? (window.location.href = `/search/go?name=${searchForm?.name}`)
-        : "";
+      hihi !== "" ? router.push(`/search/go?name=${searchForm?.name}`) : "";
 
       //window.location.replace('/watch');
       if (hihi !== "") {
@@ -66,11 +66,17 @@ const Navbar = (props) => {
     }
   };
   useEffect(() => {
-    function handleChange() {
+    if (typeof window !== "undefined") {
       setScreenWidth(window.innerWidth);
+
+      function handleResize() {
+        setScreenWidth(window.innerWidth);
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
     }
-    const listener = window.addEventListener("resize", handleChange);
-    return () => window.removeEventListener(listener, handleChange);
   }, []);
   return (
     <div>
@@ -127,7 +133,6 @@ const Navbar = (props) => {
                 <Link href={`/search/${searchForm?.name}`}>
                   <FaSearch
                     onClick={() => {
-                      window.scrollTo({ top: 0 });
                       setSearchForm({ name: "" });
                     }}
                     className="search-icon search-icons trans-03"
@@ -144,7 +149,6 @@ const Navbar = (props) => {
               ) : (
                 <FaSearch
                   onClick={() => {
-                    window.scrollTo({ top: 0 });
                     setSearchForm({ name: "" });
                   }}
                   className="search-icon search-icons trans-03"
@@ -192,7 +196,6 @@ const Navbar = (props) => {
               <Link href={`/search?name=${searchForm?.name}`}>
                 <FaSearch
                   onClick={() => {
-                    window.scrollTo({ top: 0 });
                     setSearchForm({ name: "" });
                     setFloatSearchIsVisible(false);
                   }}

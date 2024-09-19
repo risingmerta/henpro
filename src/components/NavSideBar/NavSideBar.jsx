@@ -6,9 +6,6 @@ import { IoMdHome } from "react-icons/io";
 import { RiBubbleChartFill } from "react-icons/ri";
 import { MdOutlineSearch } from "react-icons/md";
 export default function NavSidebar(props) {
-  function scrollToTop() {
-    window.scrollTo({ top: 0 });
-  }
   return (
     <div
       className="navigation-sidebar f-poppins"
@@ -37,7 +34,7 @@ export default function NavSidebar(props) {
         <div className="navigation-link-list">
           <ul>
             <li>
-              <Link onClick={() => scrollToTop()} href="/" className="homop">
+              <Link href="/" className="homop">
                 <div className="icono">
                   <IoMdHome />
                 </div>
@@ -45,11 +42,7 @@ export default function NavSidebar(props) {
               </Link>
             </li>
             <li>
-              <Link
-                onClick={() => scrollToTop()}
-                href="/random/go"
-                className="homop"
-              >
+              <Link href="/random/go" className="homop">
                 <div className="icono">
                   <FaRandom />
                 </div>
@@ -57,11 +50,7 @@ export default function NavSidebar(props) {
               </Link>
             </li>
             <li>
-              <Link
-                onClick={() => scrollToTop()}
-                href="/search/go"
-                className="homop"
-              >
+              <Link href="/search/go" className="homop">
                 <div className="icono">
                   <MdOutlineSearch />
                 </div>
@@ -69,11 +58,7 @@ export default function NavSidebar(props) {
               </Link>
             </li>
             <li>
-              <Link
-                onClick={() => scrollToTop()}
-                href="/browse/go"
-                className="homop"
-              >
+              <Link href="/browse/go" className="homop">
                 <div className="icono">
                   <RiBubbleChartFill />
                 </div>

@@ -1,7 +1,5 @@
 import React from "react";
 import "./page.css";
-import Footer from "@/components/footer/Footer";
-import Link from "next/link";
 import Randomo from "@/components/Randomo/Randomo";
 
 export const metadata = {

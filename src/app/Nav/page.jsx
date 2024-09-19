@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "@/components/Navbar/Navbar";
 import NavSidebar from "@/components/NavSideBar/NavSideBar";
 import Advertize from "@/components/Advertize/Advertize";
@@ -10,20 +10,23 @@ export default function Nav({ children }) {
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition =
-        window.scrollY || document.documentElement.scrollTop;
-      if (scrollPosition > 0 && isScrolled === false) {
-        setIsScrolled(true);
-      } else if (scrollPosition === 0) {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        const scrollPosition =
+          window.scrollY || document.documentElement.scrollTop;
+        if (scrollPosition > 0 && isScrolled === false) {
+          setIsScrolled(true);
+        } else if (scrollPosition === 0) {
+          setIsScrolled(false);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, [isScrolled]);
+
   return (
     <div className="app-container f-poppins">
       <NavBar
@@ -37,7 +40,6 @@ export default function Nav({ children }) {
       />
       <Advertize />
       {children}
-
       <Footer />
     </div>
   );
