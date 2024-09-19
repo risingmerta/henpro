@@ -7,7 +7,7 @@ async function fetchAllIds() {
   let allIds = [];
 
   for (let page = 1; page <= 135; page++) {
-    const response = await fetch(`https://vimal-two.vercel.app/api/hen-all?page=${page}`);
+    const response = await fetch(`https://demonking-7hti.onrender.com/api/hen-all?page=${page}`);
     const data = await response.json();
     
     // Assuming the response contains an array of items with IDs

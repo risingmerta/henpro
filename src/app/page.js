@@ -5,7 +5,7 @@ import Trend from "@/components/Trend/Trend";
 import Random from "@/components/Random/Random";
 
 const Page = async () => {
-  const res = await fetch("https://vimal-two.vercel.app/api/hen-home", {
+  const res = await fetch("https://demonking-7hti.onrender.com/api/hen-home", {
     cache: "no-store",
   });
   const json = await res.json();
