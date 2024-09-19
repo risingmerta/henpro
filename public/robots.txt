@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://localhost:3000/api/sitemap
+Sitemap: https://henpro.vercel.app/api/sitemap
