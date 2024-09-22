@@ -116,7 +116,7 @@ export default async function page({ params }) {
                     <div className="four11">
                       <div>
                         <div className="teamA">Brand</div>
-                        <div className="brando">{data.info.brand}</div>
+                        <div className="brando">{data.info?.brand}</div>
                       </div>
                     </div>
                     <div className="four12">
@@ -129,25 +129,25 @@ export default async function page({ params }) {
                   </div>
                   <div className="four2">
                     <div className="teamA">Brand Uploads</div>
-                    <div className="restInfo">{data.info.brandUploads}</div>
+                    <div className="restInfo">{data.info?.brandUploads}</div>
                   </div>
                   <div className="flex four3">
                     <div className="four31">
                       <div>
                         <div className="teamA">Release Date</div>
-                        <div className="restInfo">{data.info.releasedDate}</div>
+                        <div className="restInfo">{data.info?.releasedDate}</div>
                       </div>
                     </div>
                     <div className="four32">
                       <div>
                         <div className="teamA">Upload Date</div>
-                        <div className="restInfo">{data.info.uploadDate}</div>
+                        <div className="restInfo">{data.info?.uploadDate}</div>
                       </div>
                     </div>
                   </div>
                   <div className="four4">
                     <div className="teamA">Alternate Title</div>
-                    <div className="restInfo">{data.info.alternateTitle}</div>
+                    <div className="restInfo">{data.info?.alternateTitle}</div>
                   </div>
                 </div>
               </div>
