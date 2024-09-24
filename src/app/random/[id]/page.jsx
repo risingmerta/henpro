@@ -13,7 +13,7 @@ export const metadata = {
 export default async function page() {
   let data = [];
   try {
-    const res = await fetch(`https://demonking-7hti.onrender.com/api/hen-random`, {
+    const res = await fetch(`https://vimalking.vercel.app/api/hen-random`, {
       cache: "no-store",
     });
     data = await res.json();

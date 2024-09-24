@@ -7,7 +7,7 @@ export default async function page({ params, searchParams }) {
   let data = [];
   try {
     const res = await fetch(
-      `https://demonking-7hti.onrender.com/api/hen-cat?brand=${params.id}&item=${
+      `https://vimalking.vercel.app/api/hen-cat?brand=${params.id}&item=${
         searchParams.item
       }&page=${searchParams.page ? searchParams.page : "1"}`,
       {

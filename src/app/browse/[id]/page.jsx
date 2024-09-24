@@ -18,7 +18,7 @@ export default async function page() {
   let imageURL = "";
   let data = [];
   try {
-    const res = await fetch("https://demonking-7hti.onrender.com/api/hen-browse", {
+    const res = await fetch("https://vimalking.vercel.app/api/hen-browse", {
       cache: "no-store",
     });
     data = await res.json();

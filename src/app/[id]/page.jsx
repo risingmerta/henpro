@@ -63,7 +63,7 @@ export default async function page({ params }) {
   }
   // Fetch data from API
   const apiResponse = await fetch(
-    `https://demonking-7hti.onrender.com/api/hen-random`,
+    `https://vimalking.vercel.app/api/hen-random`,
     { cache: "no-store" }
   );
   const newResponse = await apiResponse.json();

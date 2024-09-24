@@ -8,7 +8,7 @@ async function fetchAllIds() {
 
   for (let page = 1; page <= 135; page++) {
     const response = await fetch(
-      `https://demonking-7hti.onrender.com/api/hen-all?page=${page}`
+      `https://vimalking.vercel.app/api/hen-all?page=${page}`
     );
     const data = await response.json();
 
@@ -23,7 +23,7 @@ async function fetchAllIds() {
 // Fetch genre and studio URLs
 async function fetchGenresAndStudios() {
   const response = await fetch(
-    "https://demonking-7hti.onrender.com/api/hen-browse"
+    "https://vimalking.vercel.app/api/hen-browse"
   );
   const data = await response.json();
 

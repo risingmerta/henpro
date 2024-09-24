@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   // Fetch the external API
-  const response = await fetch('https://demonking-7hti.onrender.com/api/hen-random', { cache: 'no-store' });
+  const response = await fetch('https://vimalking.vercel.app/api/hen-random', { cache: 'no-store' });
   
   // Parse the JSON data from the response
   const user = await response.json();
