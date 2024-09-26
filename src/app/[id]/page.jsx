@@ -28,10 +28,32 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error("Error fetching document:", error);
   }
+
+  // const localStorageWrapper = () => {
+  //   if (typeof window !== "undefined" && window.localStorage) {
+  //     return {
+  //       getItem: (key) => localStorage.getItem(key),
+  //       setItem: (key, value) => localStorage.setItem(key, value),
+  //       removeItem: (key) => localStorage.removeItem(key),
+  //       clear: () => localStorage.clear(),
+  //     };
+  //   } else {
+  //     // Handle the case when localStorage is not available
+  //     return {
+  //       getItem: () => null,
+  //       setItem: () => {},
+  //       removeItem: () => {},
+  //       clear: () => {},
+  //     };
+  //   }
+  // };
+
+  // // Usage
+  // const ls = localStorageWrapper();
+
   return {
-    title:
-    `Watch ${data.title} Hentai Video Streams Online in 720p , 1080p HD - henpro`,
-  description: `Enjoy your unlimited hentai & anime
+    title: `Watch ${data.title} Hentai Video Streams Online in 720p , 1080p HD - henpro`,
+    description: `Enjoy your unlimited hentai & anime
           collection. We are the definitive source for the best curated 720p /
           1080p HD hentai videos, viewable by mobile phone and tablet, for free.`,
   };
@@ -99,7 +121,13 @@ export default async function page({ params }) {
       <div className="watc">
         <div>
           <div>
-            <iframe src={data.url} frameborder="0" className="ifro"></iframe>
+            <iframe
+              src={data.url}
+              frameBorder="0"
+              className="ifro"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            ></iframe>
           </div>
           <div>
             <div className="slab1">
@@ -135,7 +163,9 @@ export default async function page({ params }) {
                     <div className="four31">
                       <div>
                         <div className="teamA">Release Date</div>
-                        <div className="restInfo">{data.info?.releasedDate}</div>
+                        <div className="restInfo">
+                          {data.info?.releasedDate}
+                        </div>
                       </div>
                     </div>
                     <div className="four32">
@@ -156,7 +186,9 @@ export default async function page({ params }) {
                   {data.moreInfo.tags.map((i) => (
                     <Link
                       className="tags"
-                      href={`/tags/genre?item=${i.replace(" ", "-").toLowerCase()}`}
+                      href={`/tags/genre?item=${i
+                        .replace(" ", "-")
+                        .toLowerCase()}`}
                     >
                       {i}
                     </Link>
