@@ -97,7 +97,7 @@ const Hero = ({ slides }) => {
                 className="trending-slide-content"
               >
                 <Link href={slide.id}>
-                  <Image
+                  <img
                     src={slide.image}
                     alt={slide.title}
                     width={300}

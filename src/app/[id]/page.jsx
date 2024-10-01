@@ -92,30 +92,10 @@ export default async function page({ params }) {
   const apiData = newResponse.results.data;
 
   // Extract IDs from API data
-  const ids = apiData.map((item) => item.id);
 
   // Fetch data from Firestore based on IDs
-  const firestorePromises = ids.map(async (id) => {
-    try {
-      const docRef = doc(db, "hentai", id);
-      const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        return { id, ...docSnap.data() };
-      } else {
-        console.log(`No such document for ID: ${id}`);
-        return null;
-      }
-    } catch (error) {
-      console.error(`Error fetching document for ID: ${id}`, error);
-      return null;
-    }
-  });
-
-  const firestoreData = await Promise.all(firestorePromises);
-  const filteredData = firestoreData.filter((doc) => doc !== null); // Remove null results
-
-  datal = filteredData;
+  datal = apiData;
   return (
     <div className="compli">
       <div className="watc">
