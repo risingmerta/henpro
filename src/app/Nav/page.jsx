@@ -29,7 +29,7 @@ export default function Nav({ children }) {
 
   return (
     <div className="app-container f-poppins">
-      <NavBar
+      {/* <NavBar
         isScrolled={isScrolled}
         sidebarIsOpen={sidebarIsOpen}
         setSidebarIsOpen={setSidebarIsOpen}
@@ -37,10 +37,10 @@ export default function Nav({ children }) {
       <NavSidebar
         sidebarIsOpen={sidebarIsOpen}
         setSidebarIsOpen={setSidebarIsOpen}
-      />
+      /> */}
       <Advertize />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
