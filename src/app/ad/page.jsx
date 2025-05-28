@@ -33,6 +33,7 @@ const Page = () => {
           alignItems: "center",
           textAlign: "center",
           height: "90px",
+          width: "100%",
         }}
       >
         <Script
@@ -51,6 +52,7 @@ const Page = () => {
             alignItems: "center",
             textAlign: "center",
             height: "90px",
+            width: "100%",
           }}
           //   color: "#00f2fe",
           //   fontSize: "14px",
