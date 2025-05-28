@@ -23,24 +23,19 @@ const LinkPage = () => {
     >
       <div
         className="banner-ad"
-        // style={{
-        //   width: "100%",
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   marginTop: "70px",
-        // }}
         role="banner"
         tabIndex={0}
         aria-label="Advertisement banner"
       >
         <iframe
           src="/ad"
-          // style={{
-          //   width: "fit-content",
-          //   height: "100px",
-          //   border: "none",
-          //   overflow: "hidden",
-          // }}
+          title="Ad Banner"
+          style={{
+            width: "100%",
+            height: "90px",
+            border: "none",
+            overflow: "hidden",
+          }}
           scrolling="no"
         ></iframe>
       </div>

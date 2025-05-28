@@ -15,7 +15,7 @@ const Page = () => {
       } else {
         setAdVisible(false);
       }
-    }, 1000); // Give the script some time to inject content
+    }, 1000);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -23,46 +23,45 @@ const Page = () => {
   return (
     <div
       style={{
-        backgroundColor: "#1a1a1a", // dark background
+        backgroundColor: "#1a1a1a",
+        margin: 0,
+        padding: 0,
+        height: "90px",
+        width: "100%",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
+      <Script
+        src="//abackdamstubborn.com/0edc04a5374d9021ce8e6b9f5bb01d53/invoke.js"
+        strategy="afterInteractive"
+        data-cfasync="false"
+        async
+      />
       <div
+        id="container-0edc04a5374d9021ce8e6b9f5bb01d53"
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          height: "90px",
+          height: "100%",
           width: "100%",
+          display: adVisible ? "block" : "none",
         }}
-      >
-        <Script
-          src="//abackdamstubborn.com/0edc04a5374d9021ce8e6b9f5bb01d53/invoke.js"
-          strategy="afterInteractive"
-          data-cfasync="false"
-          async
-        />
-      </div>
-      <div id="container-0edc04a5374d9021ce8e6b9f5bb01d53" />
+      />
       {!adVisible && (
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
             height: "90px",
             width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#fdbd73",
+            fontSize: "14px",
+            fontWeight: "bold",
           }}
-          //   color: "#00f2fe",
-          //   fontSize: "14px",
-          //   backgroundColor: "#1a1a1a", // dark background
-          //   border: "1px solid #00f2fe", // theme border
-          //   padding: "8px",
-          //   borderRadius: "6px",
-          // }}
         >
-          <div>Click to supports Animoon 💖</div>
+          Click to support Henpro 💖
         </div>
       )}
     </div>
