@@ -1,7 +1,10 @@
-"use client"
+"use client";
 import React from "react";
 import BouncingLoader from "../ui/bouncingloader/Bouncingloader";
 import { Skeleton } from "../ui/Skeleton/Skeleton";
+import Footer from "@/components/footer/Footer";
+import NavSidebar from "@/components/NavSideBar/NavSideBar";
+import Navbar from "@/components/Navbar/Navbar";
 
 const loading = () => {
   const [isScrolled, setIsScrolled] = useState(false);

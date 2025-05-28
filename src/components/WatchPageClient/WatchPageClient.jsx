@@ -33,7 +33,7 @@ export default function WatchPageClient({ data, datal }) {
       <div className="compli">
         <div className="watc">
           <div>
-            <div>
+            <div> 
               <iframe
                 src={data.url}
                 frameBorder="0"
