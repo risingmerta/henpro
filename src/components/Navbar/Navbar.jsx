@@ -7,7 +7,7 @@ import Link from "next/link";
 import "./navbar.css";
 import { useRouter } from "next/navigation";
 
-const Navbar = (props) => {
+export default function Navbar(props) {
   const router = useRouter();
   const [searchForm, setSearchForm] = useState({ name: "" });
   const [screenWidth, setScreenWidth] = useState(null);
@@ -210,6 +210,4 @@ const Navbar = (props) => {
       </>
     </div>
   );
-};
-
-export default Navbar;
+}
