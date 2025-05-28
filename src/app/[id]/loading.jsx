@@ -117,7 +117,7 @@ const loading = () => {
           <div>
             <div className="kalu">
               {Array.from({ length: 7 }).map((_, index) => (
-                <div key={index}>
+                <div key={index} className="alliu">
                   <div className="fixed-size-container">
                     <Skeleton className="w-[200px] h-[150px] rounded-none" />
                   </div>
