@@ -1,0 +1,127 @@
+import React from "react";
+import BouncingLoader from "../ui/bouncingloader/Bouncingloader";
+import { Skeleton } from "../ui/Skeleton/Skeleton";
+
+const loading = () => {
+  return (
+    <>
+      <Navbar
+        isScrolled={isScrolled}
+        sidebarIsOpen={sidebarIsOpen}
+        setSidebarIsOpen={setSidebarIsOpen}
+      />
+      <NavSidebar
+        sidebarIsOpen={sidebarIsOpen}
+        setSidebarIsOpen={setSidebarIsOpen}
+      />
+      <div className="compli">
+        <div className="watc">
+          <div>
+            <div>
+              <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+                <BouncingLoader />
+              </div>
+            </div>
+            <div>
+              <div className="slab1">
+                <div className="titleD">
+                  <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                </div>
+                <div className="viewD">
+                  <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                </div>
+              </div>
+              <div className="slab2">
+                <div className="fourCon">
+                  <div className="postCon">
+                    <Skeleton className="w-[200px] h-[300px] rounded-none" />
+                  </div>
+                  <div className="fourA">
+                    <div className="flex four1">
+                      <div className="four11">
+                        <div>
+                          <div className="teamA">Brand</div>
+                          <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                        </div>
+                      </div>
+                      <div className="four12">
+                        <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                      </div>
+                    </div>
+                    <div className="four2">
+                      <div className="teamA">Brand Uploads</div>
+                      <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                    </div>
+                    <div className="flex four3">
+                      <div className="four31">
+                        <div>
+                          <div className="teamA">Release Date</div>
+                          <div className="restInfo">
+                            <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="four32">
+                        <div>
+                          <div className="teamA">Upload Date</div>
+                          <div className="restInfo">
+                            <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="four4">
+                      <div className="teamA">Alternate Title</div>
+                      <div className="restInfo">
+                        <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="descSlab">
+                  <div className="tagG">
+                    <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                    <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                    <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                  </div>
+                  <div className="desc1">
+                    <Skeleton className="w-[200px] h-[10px] rounded-xl" />
+                  </div>
+                  <div className="desc2">
+                    <Skeleton className="w-[200px] h-[10px] rounded-xl" />
+                    <Skeleton className="w-[160px] h-[10px] rounded-xl" />
+                    <Skeleton className="w-[100px] h-[10px] rounded-xl" />
+                    <Skeleton className="w-[80px] h-[10px] rounded-xl" />
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div>
+            <div className="kalu">
+              {Array.from({ length: 7 }).map((_, index) => (
+                <div key={index}>
+                  <div className="fixed-size-container">
+                    <Skeleton className="w-[200px] h-[150px] rounded-none" />
+                  </div>
+                  <div className="iopu">
+                    <div className="titleo">
+                      <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                    </div>
+                    <div className="lopi">
+                      <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default loading;
