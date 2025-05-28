@@ -40,7 +40,7 @@ const LinkPage = () => {
         ></iframe>
       </div>
 
-      <h1>Hanime Links</h1>
+      <h1>Sauce Links</h1>
 
       <div className="scroll-area">
         <ul className="link-list">
@@ -60,7 +60,7 @@ const LinkPage = () => {
       </div>
 
       <div className="footer-note">
-        Powered by YourBrandName • <small>© 2025</small>
+        Powered by Henpro • <small>© 2025</small>
       </div>
     </div>
   );
