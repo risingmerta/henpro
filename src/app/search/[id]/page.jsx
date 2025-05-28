@@ -6,7 +6,7 @@ export default async function page({searchParams }) {
   let data = [];
   try {
     const res = await fetch(
-      `https://vimalking.vercel.app/api/hen-all?search=${
+      `https://hent.shoko.fun/api/hen-all?search=${
         searchParams.name ? searchParams.name : ""
       }&page=${searchParams.page ? searchParams.page : "1"}`,
       {
