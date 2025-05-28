@@ -1,17 +1,48 @@
 import React from "react";
 import "./link.css";
+import Link from "next/link";
 
 const links = [
-  { title: "Anime Title One", url: "https://hanime.link/anime1" },
-  { title: "Anime Title Two", url: "https://hanime.link/anime2" },
-  { title: "Anime Title Three", url: "https://hanime.link/anime3" },
-  { title: "Anime Title Four", url: "https://hanime.link/anime4" },
-  { title: "Anime Title Five", url: "https://hanime.link/anime5" },
-  { title: "Anime Title Six", url: "https://hanime.link/anime6" },
-  { title: "Anime Title Seven", url: "https://hanime.link/anime7" },
-  { title: "Anime Title Eight", url: "https://hanime.link/anime8" },
-  { title: "Anime Title Nine", url: "https://hanime.link/anime9" },
-  { title: "Anime Title Ten", url: "https://hanime.link/anime10" },
+  {
+    title: "Anime Title One",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Two",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Three",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Four",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Five",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Six",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Seven",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Eight",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Nine",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
+  {
+    title: "Anime Title Ten",
+    url: "https://henpro.shoko.fun/fuuki-iin-to-fuuzoku-katsudou-episode-2",
+  },
 ];
 
 const LinkPage = () => {
@@ -46,14 +77,14 @@ const LinkPage = () => {
         <ul className="link-list">
           {links.map((link, index) => (
             <li key={index}>
-              <a
+              <Link
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Link to ${link.title}`}
+                // target="_blank"
+                // rel="noopener noreferrer"
+                // aria-label={`Link to ${link.title}`}
               >
                 {index + 1}. {link.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
