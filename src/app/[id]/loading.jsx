@@ -5,6 +5,7 @@ import { Skeleton } from "../ui/Skeleton/Skeleton";
 import Footer from "@/components/footer/Footer";
 import NavSidebar from "@/components/NavSideBar/NavSideBar";
 import Navbar from "@/components/Navbar/Navbar";
+import './page.css'
 
 const loading = () => {
   const [isScrolled, setIsScrolled] = useState(false);
