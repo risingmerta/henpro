@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BouncingLoader from "../ui/bouncingloader/Bouncingloader";
 import { Skeleton } from "../ui/Skeleton/Skeleton";
 import Footer from "@/components/footer/Footer";
