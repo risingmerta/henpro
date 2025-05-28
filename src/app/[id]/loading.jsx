@@ -1,8 +1,20 @@
+"use client"
 import React from "react";
 import BouncingLoader from "../ui/bouncingloader/Bouncingloader";
 import { Skeleton } from "../ui/Skeleton/Skeleton";
 
 const loading = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setIsScrolled(scrollTop > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
       <Navbar
