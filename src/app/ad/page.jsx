@@ -10,12 +10,10 @@ const Page = () => {
       const adContainer = document.getElementById(
         "container-0edc04a5374d9021ce8e6b9f5bb01d53"
       );
-      if (adContainer && adContainer.childNodes.length > 0) {
+      if (adContainer?.childNodes.length > 0) {
         setAdVisible(true);
-      } else {
-        setAdVisible(false);
       }
-    }, 1000);
+    }, 1500); // Allow more time for ad to load
 
     return () => clearTimeout(timeout);
   }, []);
@@ -23,16 +21,15 @@ const Page = () => {
   return (
     <div
       style={{
-        backgroundColor: "#1a1a1a",
         margin: 0,
         padding: 0,
-        height: "90px",
+        backgroundColor: "#1a1a1a",
         width: "100%",
-        overflow: "hidden",
+        height: "90px",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        overflow: "hidden",
       }}
     >
       <Script
@@ -44,21 +41,24 @@ const Page = () => {
       <div
         id="container-0edc04a5374d9021ce8e6b9f5bb01d53"
         style={{
-          height: "100%",
           width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
         }}
       />
       {!adVisible && (
         <div
           style={{
-            height: "90px",
             width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            height: "100%",
             color: "#fdbd73",
             fontSize: "14px",
             fontWeight: "bold",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           Click to support Henpro 💖
