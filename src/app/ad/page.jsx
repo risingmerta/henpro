@@ -45,7 +45,6 @@ const Page = () => {
         style={{
           height: "100%",
           width: "100%",
-          display: adVisible ? "block" : "none",
         }}
       />
       {!adVisible && (
