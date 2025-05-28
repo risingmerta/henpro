@@ -30,6 +30,7 @@ const Page = () => {
         width: "100%",
         overflow: "hidden",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
       }}
