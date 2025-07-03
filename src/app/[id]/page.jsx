@@ -58,7 +58,7 @@ export default async function page({ params }) {
   console.log("Querying _id:", `/${params.id}/`);
 
   const uri =
-    "mongodb://animoon:Imperial_merta2030@145.223.82.113:27017/?authSource=admin";
+    "mongodb://root:Imperial_king2004@145.223.118.168:27017/?authSource=admin";
   const client = new MongoClient(uri);
 
   try {
