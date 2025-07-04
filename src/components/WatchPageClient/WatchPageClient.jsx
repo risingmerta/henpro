@@ -42,7 +42,7 @@ export default function WatchPageClient({ data, datal }) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               ></iframe>
             </div>
-            <div>
+            <div className="prisod">
               <div className="slab1">
                 <div className="titleD">{data.title}</div>
                 <div className="viewD">{data.views}</div>

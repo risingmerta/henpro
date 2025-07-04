@@ -1,5 +1,5 @@
 /* Wrapper for the entire section */
-.trending-section-wrapper {
+.horending-section-wrapper {
   padding: 40px; /* Padding around the section */
 
   margin-bottom: 5px;
@@ -188,8 +188,7 @@
 
 /* Media query for smaller screens */
 @media screen and (max-width: 650px) {
-  .trending-section-wrapper {
-    padding: 20px;
+  .horending-section-wrapper {
     padding-right: 10px;
     padding-left: 10px; /* Remove padding for smaller screens */
   }

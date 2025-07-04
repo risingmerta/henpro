@@ -1,8 +1,8 @@
 /* Wrapper for the entire section */
-.trending-section-wrapper {
+.rending-section-wrapper {
   padding: 40px; /* Padding around the section */
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: -70px;
+  margin-bottom: -70px;
 }
 
 /* Heading styling */
@@ -182,10 +182,10 @@
 
 /* Media query for smaller screens */
 @media screen and (max-width: 650px) {
-  .trending-section-wrapper {
-    padding: 20px;
+  .rending-section-wrapper {
     padding-right: 10px;
     padding-left: 10px; /* Remove padding for smaller screens */
+    margin-bottom: -140px;
   }
 
   .trending-item-sidebar {

@@ -5,7 +5,7 @@ import { Skeleton } from "../ui/Skeleton/Skeleton";
 import Footer from "@/components/footer/Footer";
 import NavSidebar from "@/components/NavSideBar/NavSideBar";
 import Navbar from "@/components/Navbar/Navbar";
-import './page.css'
+import "./page.css";
 
 const loading = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,14 +39,15 @@ const loading = () => {
               </div>
             </div>
             <div>
-              <div className="slab1">
+              <div className="slab1 flex flex-col gap-3">
                 <div className="titleD">
-                  <Skeleton className="w-[70px] h-[20px] rounded-xl" />
+                  <Skeleton className="w-[200px] h-[20px] rounded-xl" />
                 </div>
                 <div className="viewD">
                   <Skeleton className="w-[70px] h-[20px] rounded-xl" />
                 </div>
               </div>
+
               <div className="slab2">
                 <div className="fourCon">
                   <div className="postCon">
@@ -94,16 +95,21 @@ const loading = () => {
                     </div>
                   </div>
                 </div>
-                <div className="descSlab">
-                  <div className="tagG">
+                <div className="descSlab flex flex-col gap-3">
+                  {/* Tags row */}
+                  <div className="tagG flex gap-2">
                     <Skeleton className="w-[70px] h-[20px] rounded-xl" />
                     <Skeleton className="w-[70px] h-[20px] rounded-xl" />
                     <Skeleton className="w-[70px] h-[20px] rounded-xl" />
                   </div>
+
+                  {/* First line of description */}
                   <div className="desc1">
                     <Skeleton className="w-[200px] h-[10px] rounded-xl" />
                   </div>
-                  <div className="desc2">
+
+                  {/* Paragraph-style lines */}
+                  <div className="desc2 flex flex-col gap-1">
                     <Skeleton className="w-[200px] h-[10px] rounded-xl" />
                     <Skeleton className="w-[160px] h-[10px] rounded-xl" />
                     <Skeleton className="w-[100px] h-[10px] rounded-xl" />
@@ -121,7 +127,7 @@ const loading = () => {
                   <div className="fixed-size-container">
                     <Skeleton className="w-[200px] h-[150px] rounded-none" />
                   </div>
-                  <div className="iopu">
+                  <div className="iopu flex flex-col gap-2">
                     <div className="titleo">
                       <Skeleton className="w-[70px] h-[20px] rounded-xl" />
                     </div>

@@ -5,29 +5,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-.pagito {
   margin-top: 100px;
-}
-.randio {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-.inrandi:hover {
-  background: #474747;
-  color: #ffffff;
-  cursor: pointer;
-}
-.inrandi {
-  padding: 10px 20px;
-  background: var(--theme);
-  color: black;
-  display: flex;
-  align-items: center;
 }
 
 .pagination {

@@ -1,18 +1,15 @@
+// app/tags/[id]/TagsClient.jsx
 "use client";
-import Link from "next/link";
+
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
+import "./page.css";
 import Navbar from "../Navbar/Navbar";
 import NavSidebar from "../NavSideBar/NavSideBar";
 import Footer from "../footer/Footer";
 
-const Search = (props) => {
-  let data = [];
-  if (localStorage.getItem("searchData")) {
-    data = JSON.parse(localStorage.getItem("searchData"));
-  } else {
-    data = props.data;
-  }
+export default function TagsClient({ id, item, page, pagination, data }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
 
@@ -36,21 +33,14 @@ const Search = (props) => {
         setSidebarIsOpen={setSidebarIsOpen}
       />
       <div className="page-container">
+        {/* Top Pagination */}
         <div className="pagination">
           <div className="pagination-items">
-            {props.pagin.map((i) => (
+            {pagination.map((i) => (
               <Link
-                className={`pagination-item ${
-                  props.page
-                    ? parseInt(props.page) === i
-                      ? "aligo"
-                      : "pgino"
-                    : i === 1
-                    ? "aligo"
-                    : "pgino"
-                }`}
                 key={i}
-                href={`/search/go?page=${i}`}
+                className={`pagination-item ${page === i ? "aligo" : "pgino"}`}
+                href={`/tags/${id}?item=${item.replace("/", "")}&page=${i}`}
               >
                 {i}
               </Link>
@@ -58,16 +48,16 @@ const Search = (props) => {
           </div>
           <Link
             className="pagination-next"
-            href={`/search/go?page=${
-              props.page ? parseInt(props.page) + 1 : 2
-            }`}
+            href={`/tags/${id}?item=${item.replace("/", "")}&page=${page + 1}`}
           >
             <FaAngleRight />
           </Link>
         </div>
+
+        {/* Anime Cards */}
         <div className="animol">
-          {props.data.results.data.all.map((i) => (
-            <Link className="anime-card" key={i.id} href={i.id}>
+          {data.map((i) => (
+            <Link key={i.id} className="anime-card" href={i.id}>
               <div className="poster-wrapper">
                 <img src={i.poster} alt={i.title} className="poster" />
                 <div className="gradient-overlay"></div>
@@ -79,21 +69,15 @@ const Search = (props) => {
             </Link>
           ))}
         </div>
+
+        {/* Bottom Pagination */}
         <div className="pagination">
           <div className="pagination-items">
-            {props.pagin.map((i) => (
+            {pagination.map((i) => (
               <Link
-                className={`pagination-item ${
-                  props.page
-                    ? parseInt(props.page) === i
-                      ? "aligo"
-                      : "pgino"
-                    : i === 1
-                    ? "aligo"
-                    : "pgino"
-                }`}
                 key={i}
-                href={`/search/go?page=${i}`}
+                className={`pagination-item ${page === i ? "aligo" : "pgino"}`}
+                href={`/tags/${id}?item=${item.replace("/", "")}&page=${i}`}
               >
                 {i}
               </Link>
@@ -101,9 +85,7 @@ const Search = (props) => {
           </div>
           <Link
             className="pagination-next"
-            href={`/search/go?page=${
-              props.page ? parseInt(props.page) + 1 : 2
-            }`}
+            href={`/tags/${id}?item=${item.replace("/", "")}&page=${page + 1}`}
           >
             <FaAngleRight />
           </Link>
@@ -112,6 +94,4 @@ const Search = (props) => {
       <Footer />
     </>
   );
-};
-
-export default Search;
+}

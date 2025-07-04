@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Hero = ({ slides }) => {
   return (
-    <div className="trending-section-wrapper">
+    <div className="rending-section-wrapper">
       <div className="headd">
         <div className="trh">
           <div className="trhh">Random</div>

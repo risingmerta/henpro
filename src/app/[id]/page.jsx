@@ -36,7 +36,6 @@ export async function generateMetadata({ params }) {
   const paramsId = params.id;
   const formattedTitle = capitalizeWords(paramsId);
 
-  console.log(formattedTitle);
   // Output: Fuuki Iin To Fuuzoku Katsudou Episode 2
 
   return {
@@ -54,8 +53,6 @@ export default async function page({ params }) {
   const ids = params.id;
   const id = "/" + ids + "/";
   // const db = await connectDB();
-  console.log("params.id:", params.id);
-  console.log("Querying _id:", `/${params.id}/`);
 
   const uri =
     "mongodb://root:Imperial_king2004@145.223.118.168:27017/?authSource=admin";
@@ -71,12 +68,6 @@ export default async function page({ params }) {
     const doc = await collection.findOne({ _id: id });
     data = doc;
     imageURL = doc.poster;
-
-    if (doc) {
-      console.log("Document found:", doc.title);
-    } else {
-      console.log("Document not found.");
-    }
   } catch (e) {
     console.error(e);
   } finally {

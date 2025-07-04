@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Hero = ({ slides }) => {
   return (
-    <div className="trending-section-wrapper">
+    <div className="horending-section-wrapper">
       <div className="headd">
         <div className="trh">
           <div className="trhh">Recent Uploads</div>
