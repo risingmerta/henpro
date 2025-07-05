@@ -245,7 +245,7 @@
   .restInfo {
     display: flex;
     font-size: 14px;
-  }
+  } 
 }
 @media (max-width: 460px) {
   .postCon {

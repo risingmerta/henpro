@@ -208,6 +208,8 @@ const overlayStyle = {
 const adWrapperStyle = {
   maxWidth: "800px",
   width: "90%",
+  maxHeight: "90vh",          // Limit height
+  overflowY: "auto",          // Enable scroll inside if content overflows
   background: "#111",
   borderRadius: "12px",
   padding: "20px",
