@@ -9,10 +9,24 @@ import Random from "@/components/Random/Random";
 import Navbar from "../Navbar/Navbar";
 import NavSidebar from "../NavSideBar/NavSideBar";
 import Footer from "../footer/Footer";
+import { themeStyles, backgroundToTheme } from "@/styles/themeStyles"; // Adjust path if needed
 
-export default function HomeClient({ slides, slideo, slidel }) {
+export default function HomeClient({
+  slides,
+  slideo,
+  slidel,
+  user,
+  publisher,
+  referredPublisher,
+  link,
+  design,
+}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+
+  const designName = design?.split("/").pop()?.split(".")[0]; // "done" from "/done.jpg"
+  const themeKey = backgroundToTheme[designName] || "redWhiteBlack";
+  const theme = themeStyles[themeKey];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,9 +69,77 @@ export default function HomeClient({ slides, slideo, slidel }) {
           </div>
         </div>
 
+        <div
+          className="bio-ad ad-bottom"
+          style={{
+            background: theme?.adBg,
+            boxShadow: theme?.adShadow,
+          }}
+        >
+          <iframe
+            src={`/ad?theme=${design}`}
+            title="Bottom Ad"
+            scrolling="no"
+            style={{ width: "100%", height: "90px", border: "none" }}
+          />
+          {user?.referredBy && (
+            <iframe
+              src={`/ad?user=${user?.referredBy}&theme=${design}`}
+              title="Ref Ad"
+              scrolling="no"
+              style={{ width: "100%", height: "90px", border: "none" }}
+            />
+          )}
+        </div>
+
         {/* Sections */}
         <Hero slides={slides} />
+
+        <div
+          className="bio-ad ad-bottom"
+          style={{
+            background: theme?.adBg,
+            boxShadow: theme?.adShadow,
+          }}
+        >
+          <iframe
+            src={`/ad2?theme=${design}`}
+            title="Bottom Ad"
+            scrolling="no"
+            style={{ width: "100%", height: "90px", border: "none" }}
+          />
+          {user?.referredBy && (
+            <iframe
+              src={`/ad2?user=${user?.referredBy}&theme=${design}`}
+              title="Ref Ad"
+              scrolling="no"
+              style={{ width: "100%", height: "90px", border: "none" }}
+            />
+          )}
+        </div>
         <Trend slides={slideo} />
+        <div
+          className="bio-ad ad-bottom"
+          style={{
+            background: theme?.adBg,
+            boxShadow: theme?.adShadow,
+          }}
+        >
+          <iframe
+            src={`/ad?theme=${design}`}
+            title="Bottom Ad"
+            scrolling="no"
+            style={{ width: "100%", height: "90px", border: "none" }}
+          />
+          {user?.referredBy && (
+            <iframe
+              src={`/ad?user=${user?.referredBy}&theme=${design}`}
+              title="Ref Ad"
+              scrolling="no"
+              style={{ width: "100%", height: "90px", border: "none" }}
+            />
+          )}
+        </div>
         <Random slides={slidel} />
       </div>
       <Footer />

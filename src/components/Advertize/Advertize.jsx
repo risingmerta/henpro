@@ -2,59 +2,66 @@
 import React, { useEffect, useState } from "react";
 import "./advertize.css";
 
-const Advertize = () => {
+export default function Advertize(props) {
   const [time, setTime] = useState(new Date());
-  const [adver, setAdver] = useState("false");
+  const [showAd, setShowAd] = useState(false);
+
+  const adLinks = [
+    "https://processestheycod.com/vfy17qhd0?key=e4d13b83c983a7320105c4944bea069c", // EVEN clicks (2, 4, 6...)
+    "https://processestheycod.com/esvngvvqes?key=09b5fc0aaedbb9d883cf646a4d1104cb", // ODD clicks (1, 3, 5...)
+  ];
+
+  const ls = typeof window !== "undefined" ? localStorage : null;
 
   useEffect(() => {
     const interval = setInterval(() => setTime(new Date()), 1000);
 
-    const lastDisplay = localStorage.getItem("lastDisplay");
-    const lastDate = localStorage.getItem("lastDate");
-    const lastHour = localStorage.getItem("lastHour");
+    if (!ls) return;
+
+    const lastDisplay = ls.getItem("lastDisplay");
+    const lastDate = ls.getItem("lastDate");
+    const lastHour = ls.getItem("lastHour");
 
     const currentDate = time.getDate();
     const currentHour = time.getHours();
 
     const lastDisplayDate = new Date(lastDisplay);
-    const minutesSinceLastDisplay = Math.floor(
-      (time - lastDisplayDate) / (1000 * 60)
-    );
+    const secondsSinceLastDisplay = Math.floor((time - lastDisplayDate) / 1000);
 
     const shouldShowAd =
-      minutesSinceLastDisplay >= 5 ||
+      secondsSinceLastDisplay >= 30 ||
       currentDate !== parseInt(lastDate) ||
       currentHour !== parseInt(lastHour);
 
-    if (shouldShowAd) {
-      setAdver("true");
-    } else {
-      setAdver("false");
-    }
+    setShowAd(shouldShowAd);
 
     return () => clearInterval(interval);
   }, [time]);
 
-  function Newtab() {
-    localStorage.setItem("lastDisplay", new Date().toISOString());
-    localStorage.setItem("lastDate", time.getDate().toString());
-    localStorage.setItem("lastHour", time.getHours().toString());
-    localStorage.setItem("truth", "false");
-    window.open(
-      "https://www.highrevenuenetwork.com/hnq4sfr7se?key=fa60dc3aeeb0a08aa0476e80986ad233"
-    );
+  function handleAdClick() {
+    if (!ls) return;
+
+    const clickCount = parseInt(ls.getItem("adClickCount") || "0", 10);
+    const nextClick = clickCount + 1;
+
+    const linkToOpen = nextClick % 2 === 1 ? adLinks[1] : adLinks[0]; // odd: [1], even: [0]
+
+    // Save next state
+    ls.setItem("adClickCount", nextClick.toString());
+    ls.setItem("lastDisplay", new Date().toISOString());
+    ls.setItem("lastDate", time.getDate().toString());
+    ls.setItem("lastHour", time.getHours().toString());
+    ls.setItem("truth", "false");
+
+    window.open(linkToOpen, "_blank");
+    setShowAd(false);
   }
 
   return (
     <div
       className="Advertize"
-      style={{ zIndex: adver === "true" ? 100 : -1 }}
-      onClick={() => {
-        setAdver("false");
-        Newtab();
-      }}
+      style={{ zIndex: showAd ? 100 : -1 }}
+      onClick={handleAdClick}
     ></div>
   );
-};
-
-export default Advertize;
+}

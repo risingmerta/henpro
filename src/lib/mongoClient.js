@@ -1,8 +1,7 @@
 import { MongoClient } from "mongodb";
 
-const MONGODB_URI =
-  "mongodb://root:Imperial_king2004@145.223.118.168:27017/?authSource=admin";
-const MONGODB_DB = "mydatabase";
+const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_DB = process.env.MONGODB_DB;
 
 if (!MONGODB_URI) throw new Error("Please define MONGODB_URI in .env");
 

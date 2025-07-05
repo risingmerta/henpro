@@ -271,6 +271,9 @@
   .imo {
     display: none;
   }
+  .margino {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 750px) {

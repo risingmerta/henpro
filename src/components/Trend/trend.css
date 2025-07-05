@@ -1,7 +1,7 @@
 /* Wrapper for the entire section */
 .trending-section-wrapper {
   padding: 40px; /* Padding around the section */
-  margin-top: -70px;
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
@@ -55,7 +55,7 @@
 /* Individual slide styling */
 .trending-slide {
   position: relative; /* Required for absolute positioning of child elements */
-  height: 370px; /* Height of each slide */
+  height: fit-content; /* Height of each slide */
   color: white; /* Text color */
   display: flex; /* Flexbox for layout */
   justify-content: center; /* Center content horizontally */
@@ -185,8 +185,6 @@
   .trending-section-wrapper {
     padding-right: 10px;
     padding-left: 10px; /* Remove padding for smaller screens */
-    margin-top: -120px;
-    margin-bottom: -110px;
   }
 
   .trending-item-sidebar {

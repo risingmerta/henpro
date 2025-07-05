@@ -56,7 +56,7 @@
 /* Individual slide styling */
 .trending-slide {
   position: relative; /* Required for absolute positioning of child elements */
-
+  height: fit-content;
   color: white; /* Text color */
   display: flex; /* Flexbox for layout */
   justify-content: center; /* Center content horizontally */

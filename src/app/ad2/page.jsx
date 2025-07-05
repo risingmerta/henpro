@@ -85,7 +85,7 @@ const Page = () => {
             transition: "all 0.3s ease",
           }}
         >
-          Click to support Henpro 💖
+          Click to support Biolynk 💖
         </div>
       )}
     </div>

@@ -10,8 +10,19 @@ import "./page.css";
 import NavSidebar from "../NavSideBar/NavSideBar";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../footer/Footer";
+import { themeStyles, backgroundToTheme } from "@/styles/themeStyles"; // Adjust path if needed
 
-export default function BrowseClient({ data }) {
+export default function BrowseClient({
+  data,
+  user,
+  publisher,
+  referredPublisher,
+  link,
+  design,
+}) {
+  const designName = design?.split("/").pop()?.split(".")[0]; // "done" from "/done.jpg"
+  const themeKey = backgroundToTheme[designName] || "redWhiteBlack";
+  const theme = themeStyles[themeKey];
   const icons = [<BsFire />, <FaLeaf />, <FaRandom />, <IoMdSearch />];
   const links = ["/", "/browse/go", "/random/go", "/search/go"];
 
@@ -39,72 +50,28 @@ export default function BrowseClient({ data }) {
         setSidebarIsOpen={setSidebarIsOpen}
       />
       <div className="comp-brow">
-        <div>
-          {/* Category Grid */}
-          <div className="imagino">
-            {data.category?.map((i, index) => (
-              <Link key={i.id} className="image-contai" href={links[index]}>
-                <img src={i.poster} alt="Sample Image" />
-                <div className="text-overl text-overl-top">{icons[index]}</div>
-                <div className="text-overl text-overl-bottom">
-                  {i.title.toUpperCase()}
-                </div>
-                <div className="text-overl text-overl-triam">
-                  {i.description}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          {/* Featured Grid */}
-          <div className="imagino2">
-            <div>
-              <div className="image-contai1" href={links[0]}>
-                <img src={data.category?.[0]?.poster} alt="Sample Image" />
-                <div className="text-overl text-overl-top">{icons[0]}</div>
-                <div className="text-overl text-overl-bottom">
-                  {data.category?.[0]?.title?.toUpperCase()}
-                </div>
-                <div className="text-overl text-overl-triam">
-                  {data.category?.[0]?.description}
-                </div>
-              </div>
-              <div className="image-contai2" href={links[1]}>
-                <img src={data.category?.[1]?.poster} alt="Sample Image" />
-                <div className="text-overl text-overl-top">{icons[1]}</div>
-                <div className="text-overl text-overl-bottom">
-                  {data.category?.[1]?.title?.toUpperCase()}
-                </div>
-                <div className="text-overl text-overl-triam">
-                  {data.category?.[1]?.description}
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="image-contai3" href={links[2]}>
-                <img src={data.category?.[2]?.poster} alt="Sample Image" />
-                <div className="text-overl text-overl-top">{icons[2]}</div>
-                <div className="text-overl text-overl-bottom">
-                  {data.category?.[2]?.title?.toUpperCase()}
-                </div>
-                <div className="text-overl text-overl-triam">
-                  {data.category?.[2]?.description}
-                </div>
-              </div>
-              <div className="image-contai4" href={links[3]}>
-                <img src={data.category?.[3]?.poster} alt="Sample Image" />
-                <div className="text-overl text-overl-top">{icons[3]}</div>
-                <div className="text-overl text-overl-bottom">
-                  {data.category?.[3]?.title?.toUpperCase()}
-                </div>
-                <div className="text-overl text-overl-triam">
-                  {data.category?.[3]?.description}
-                </div>
-              </div>
-            </div>
-          </div>
+        <div
+          className="bio-ad ad-bottom"
+          style={{
+            background: theme?.adBg,
+            boxShadow: theme?.adShadow,
+          }}
+        >
+          <iframe
+            src={`/ad?theme=${design}`}
+            title="Bottom Ad"
+            scrolling="no"
+            style={{ width: "100%", height: "90px", border: "none" }}
+          />
+          {user?.referredBy && (
+            <iframe
+              src={`/ad?user=${user?.referredBy}&theme=${design}`}
+              title="Ref Ad"
+              scrolling="no"
+              style={{ width: "100%", height: "90px", border: "none" }}
+            />
+          )}
         </div>
-
         {/* Genres */}
         <div>
           <div className="heff">CATEGORIES TAGS</div>
@@ -160,6 +127,29 @@ export default function BrowseClient({ data }) {
               ) : null
             )}
           </div>
+        </div>
+
+        <div
+          className="bio-ad ad-bottom"
+          style={{
+            background: theme?.adBg,
+            boxShadow: theme?.adShadow,
+          }}
+        >
+          <iframe
+            src={`/ad2?theme=${design}`}
+            title="Bottom Ad"
+            scrolling="no"
+            style={{ width: "100%", height: "90px", border: "none" }}
+          />
+          {user?.referredBy && (
+            <iframe
+              src={`/ad?user=${user?.referredBy}&theme=${design}`}
+              title="Ref Ad"
+              scrolling="no"
+              style={{ width: "100%", height: "90px", border: "none" }}
+            />
+          )}
         </div>
 
         {/* Studios */}
