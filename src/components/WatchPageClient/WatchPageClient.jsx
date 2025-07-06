@@ -202,24 +202,23 @@ const overlayStyle = {
   alignItems: "center",
   flexDirection: "column",
   padding: "20px",
-  overflowY: "auto", // allow scrolling
+  overflowY: "auto", // 👈 add scroll here
 };
 
 const adWrapperStyle = {
   maxWidth: "800px",
   width: "90%",
-  maxHeight: "90vh", // limit height
-  overflowY: "auto", // enable scroll inside
   background: "#111",
   borderRadius: "12px",
   padding: "20px",
   position: "relative",
   textAlign: "center",
+  // ❌ remove maxHeight & overflowY
 };
 
 const closeButtonStyle = {
   position: "absolute",
-  top: "20px",
+  top: "-20px",
   left: "50%",
   transform: "translateX(-50%)",
   padding: "6px 16px",
@@ -229,7 +228,6 @@ const closeButtonStyle = {
   border: "none",
   borderRadius: "999px",
   cursor: "pointer",
-  zIndex: 10000,
 };
 
 const supportTextStyle = {
