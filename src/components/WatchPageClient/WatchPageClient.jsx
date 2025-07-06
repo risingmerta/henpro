@@ -31,13 +31,12 @@ export default function WatchPageClient({ data, datal }) {
     <>
       {showAd && (
         <div style={overlayStyle}>
-          <div style={adWrapperStyle}>
-            {/* Close Button */}
-            <button onClick={() => setShowAd(false)} style={closeButtonStyle}>
-              ✕ Close
-            </button>
+          {/* Close Button OUTSIDE the scrollable ad box */}
+          <button onClick={() => setShowAd(false)} style={closeButtonStyle}>
+            ✕ Close
+          </button>
 
-            {/* Support Text */}
+          <div style={adWrapperStyle}>
             <div style={supportTextStyle}>
               This ad supports <strong>Henpro</strong>
             </div>
@@ -203,13 +202,14 @@ const overlayStyle = {
   alignItems: "center",
   flexDirection: "column",
   padding: "20px",
+  overflowY: "auto", // allow scrolling
 };
 
 const adWrapperStyle = {
   maxWidth: "800px",
   width: "90%",
-  maxHeight: "90vh",          // Limit height
-  overflowY: "auto",          // Enable scroll inside if content overflows
+  maxHeight: "90vh", // limit height
+  overflowY: "auto", // enable scroll inside
   background: "#111",
   borderRadius: "12px",
   padding: "20px",
@@ -219,7 +219,7 @@ const adWrapperStyle = {
 
 const closeButtonStyle = {
   position: "absolute",
-  top: "-20px",
+  top: "20px",
   left: "50%",
   transform: "translateX(-50%)",
   padding: "6px 16px",
@@ -229,6 +229,7 @@ const closeButtonStyle = {
   border: "none",
   borderRadius: "999px",
   cursor: "pointer",
+  zIndex: 10000,
 };
 
 const supportTextStyle = {
