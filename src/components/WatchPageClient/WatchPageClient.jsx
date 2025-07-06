@@ -31,12 +31,13 @@ export default function WatchPageClient({ data, datal }) {
     <>
       {showAd && (
         <div style={overlayStyle}>
-          {/* Close Button OUTSIDE the scrollable ad box */}
-          <button onClick={() => setShowAd(false)} style={closeButtonStyle}>
-            ✕ Close
-          </button>
-
           <div style={adWrapperStyle}>
+            {/* Close Button */}
+            <button onClick={() => setShowAd(false)} style={closeButtonStyle}>
+              ✕ Close
+            </button>
+
+            {/* Support Text */}
             <div style={supportTextStyle}>
               This ad supports <strong>Henpro</strong>
             </div>
