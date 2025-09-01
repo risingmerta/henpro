@@ -1,4 +1,4 @@
-// app/browse/page.jsx
+// app/browse/[id]/page.jsx
 import React from "react";
 import BrowseClient from "@/components/BrowseClient/BrowseClient";
 import { connectDB } from "@/lib/mongoClient";
@@ -11,31 +11,41 @@ export const metadata = {
 export default async function Page({ searchParams }) {
   const db = await connectDB();
   const searchParam = await searchParams;
-  const username = searchParam.ref || "testing";
+  const username = searchParam?.ref || "testing";
 
   // Get user by username
   const userDoc = await db.collection("users").findOne({ username });
 
-  const user = {
-    id: userDoc._id.toString(),
-    email: userDoc.email,
-    username: userDoc.username,
-    avatar: userDoc.avatar,
-    bio: userDoc.bio || "",
-    referredBy: userDoc.referredBy || null,
-  };
+  const user = userDoc
+    ? {
+        id: userDoc._id?.toString() || "",
+        email: userDoc.email || "",
+        username: userDoc.username || username,
+        avatar: userDoc.avatar || "",
+        bio: userDoc.bio || "",
+        referredBy: userDoc.referredBy || null,
+      }
+    : {
+        id: "",
+        email: "",
+        username,
+        avatar: "",
+        bio: "",
+        referredBy: null,
+      };
 
   // Get publisher by username (since now _id = username in publishers)
   const publisherDoc = await db
     .collection("publishers")
     .findOne({ _id: username });
+
   const publisher = publisherDoc
     ? {
-        id: publisherDoc._id,
-        email: publisherDoc.email,
+        id: publisherDoc._id || "",
+        email: publisherDoc.email || "",
         username: publisherDoc.username || username,
-        adUnit: publisherDoc.adUnit,
-        joinedAt: publisherDoc.joinedAt,
+        adUnit: publisherDoc.adUnit || "",
+        joinedAt: publisherDoc.joinedAt || "",
       }
     : null;
 
@@ -44,15 +54,15 @@ export default async function Page({ searchParams }) {
   if (user?.referredBy) {
     const referredDoc = await db
       .collection("publishers")
-      .findOne({ _id: user?.referredBy });
+      .findOne({ _id: user.referredBy });
 
     if (referredDoc) {
       referredPublisher = {
-        id: referredDoc._id,
-        username: referredDoc.username || user?.referredBy,
-        email: referredDoc.email,
-        adUnit: referredDoc.adUnit,
-        joinedAt: referredDoc.joinedAt,
+        id: referredDoc._id || "",
+        username: referredDoc.username || user.referredBy,
+        email: referredDoc.email || "",
+        adUnit: referredDoc.adUnit || "",
+        joinedAt: referredDoc.joinedAt || "",
       };
     }
   }
@@ -62,6 +72,7 @@ export default async function Page({ searchParams }) {
   const links = linksDoc?.links || [];
   const design = linksDoc?.design || "";
 
+  // Fetch browsing data
   let data = [];
   try {
     const res = await fetch("https://hent.shoko.fun/api/hen-browse", {
@@ -69,12 +80,12 @@ export default async function Page({ searchParams }) {
     });
     data = await res.json();
   } catch (error) {
-    console.error("Error fetching document:", error);
+    console.error("Error fetching browsing data:", error);
   }
 
   return (
     <BrowseClient
-      data={data?.results?.data || {}}
+      data={data?.results?.data || []}
       user={user}
       publisher={publisher}
       referredPublisher={referredPublisher}

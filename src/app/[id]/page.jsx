@@ -55,7 +55,7 @@ export default async function page({ params }) {
   // const db = await connectDB();
 
   const uri =
-    "mongodb://root:Imperial_king2004@145.223.118.168:27017/?authSource=admin";
+    "mongodb://root:Imperial_king2004@72.60.33.194:27017/?authSource=admin";
   const client = new MongoClient(uri);
 
   try {
